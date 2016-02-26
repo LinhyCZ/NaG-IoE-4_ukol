@@ -1,0 +1,8 @@
+wifi.setmode(wifi.STATION)
+ wifi.sta.config("RPI_NAG","rpinag123")
+ wifi.sta.connect()
+ wifi.sta.setip({ip="192.168.12.82",netmask="255.255.255.0",gateway="192.168.12.1"})
+ print("ESP8266 mode is: " .. wifi.getmode())
+ print("The module MAC address is: " .. wifi.ap.getmac())
+ print("Config done, IP is "..wifi.sta.getip())
+ dofile ("page.lua")
